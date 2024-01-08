@@ -170,7 +170,7 @@ jobs:
       - name: Download APK artifacts
         uses: actions/download-artifact@v4
         with:
-          path: ~/apk-artifacts
+          path: ~/runner/apk-artifacts
 
       - name: Set up JDK
         uses: actions/setup-java@v4
