@@ -164,7 +164,7 @@ jobs:
     needs:
       - build_multisrc
       - build_individual
-    if: "github.repository == 'tachiyomiorg/tachiyomi-extensions'"
+    if: "github.repository == 'disbxys/tachiyomi-extensions'"
     runs-on: ubuntu-latest
     steps:
       - name: Download APK artifacts
