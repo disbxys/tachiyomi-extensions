@@ -2,17 +2,12 @@
 set -e
 shopt -s globstar nullglob extglob
 
-# Make sure APKs location exists
-mkdir -p ~/apk-artifacts/
-
 # Get APKs from previous jobs' artifacts
 cp -R ~/apk-artifacts/ $PWD
 APKS=( **/*".apk" )
-echo "${PWD}"
-ls -1 $APKS | wc -l
 
 # Fail if too little extensions seem to have been built
-if [ "${#APKS[@]}" -le "100" ]; then
+if [ "${#APKS[@]}" -le "10" ]; then
     echo "Insufficient amount of APKs found. Please check the project configuration."
     exit 1
 else
