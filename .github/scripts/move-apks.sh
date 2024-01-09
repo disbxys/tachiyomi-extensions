@@ -2,9 +2,16 @@
 set -e
 shopt -s globstar nullglob extglob
 
+# Make sure APKs location exists
+mkdir -p ~/apk-artifacts/
+
 # Get APKs from previous jobs' artifacts
 cp -R ~/apk-artifacts/ $PWD
 APKS=( **/*".apk" )
+## Remove after fix
+echo "APKs: "
+ls $APKS
+##
 
 # Fail if too little extensions seem to have been built
 if [ "${#APKS[@]}" -le "10" ]; then
