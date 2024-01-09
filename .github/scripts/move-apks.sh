@@ -2,6 +2,9 @@
 set -e
 shopt -s globstar nullglob extglob
 
+# Make sure APKs location exists
+mkdir -p ~/apk-artifacts/
+
 # Get APKs from previous jobs' artifacts
 cp -R ~/apk-artifacts/ $PWD
 APKS=( **/*".apk" )
