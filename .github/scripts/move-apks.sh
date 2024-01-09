@@ -8,6 +8,7 @@ mkdir -p ~/apk-artifacts/
 # Get APKs from previous jobs' artifacts
 cp -R ~/apk-artifacts/ $PWD
 APKS=( **/*".apk" )
+echo "${PWD}"
 
 # Fail if too little extensions seem to have been built
 if [ "${#APKS[@]}" -le "100" ]; then
