@@ -9,6 +9,7 @@ mkdir -p ~/apk-artifacts/
 cp -R ~/apk-artifacts/ $PWD
 APKS=( **/*".apk" )
 echo "${PWD}"
+ls -1 $APKS | wc -l
 
 # Fail if too little extensions seem to have been built
 if [ "${#APKS[@]}" -le "100" ]; then
